@@ -2,64 +2,119 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Brawlers</title>
+  <title>Catégories de Brawlers – Actu Brawl</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f0f8ff;
+      background-color: #1e1e2f;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #ffcc00;
+      color: #1e1e2f;
       padding: 20px;
+      text-align: center;
+      font-size: 2em;
     }
-    .perso {
-      border: 1px solid #ccc;
+    nav {
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    main {
+      padding: 30px;
+      text-align: center;
+    }
+    .categorie {
+      background-color: #2c2c44;
+      padding: 20px;
+      margin: 20px auto;
       border-radius: 10px;
-      padding: 15px;
-      margin-bottom: 20px;
-      background-color: #ffffff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+      font-size: 20px;
+      transition: transform 0.3s, background-color 0.3s ease;
     }
-    .perso h2 {
-      color: #94d7f4;
+    .categorie a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    /* Effet de survol */
+    .categorie:hover {
+      transform: scale(1.05);
+      background-color: #ffcc00;
+      cursor: pointer;
+    }
+    /* Couleurs en fonction de la rareté */
+    .starter {
+      background-color: #94d7f4; /* Bleu pour Starter */
+    }
+    .rare {
+      background-color: #64c5e4; /* Bleu clair pour Rare */
+    }
+    .super-rare {
+      background-color: #6a3eb0; /* Violet pour Super Rare */
+    }
+    .epique {
+      background-color: #f9a74d; /* Orange pour Epique */
+    }
+    .mythique {
+      background-color: #ff6f61; /* Rouge pour Mythique */
+    }
+    .legerendaire {
+      background-color: #f5c142; /* Or pour Légendaire */
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+      color: #888;
+      font-size: 0.9em;
+    }
+
+    /* Icône d'effet (facultatif, si tu veux ajouter des images) */
+    .categorie img {
+      width: 30px;
+      margin-right: 10px;
+      vertical-align: middle;
     }
   </style>
 </head>
 <body>
 
-  <h1 id="titre">Brawlers</h1>
-  <div id="persos"></div>
+<header>
+  <h1>Choisis une Catégorie de Brawlers</h1>
+</header>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const cat = params.get('cat');
-    const titre = document.getElementById("titre");
-    const persoContainer = document.getElementById("persos");
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="brawlers-categories.html">Brawlers</a>
+  <a href="maps.html">Maps</a>
+  <a href="actualites.html">Actualité</a>
+  <a href="lore.html">Lore</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-    const data = {
-      starter: [
-        { nom: "Shelly", desc: Perso de base, efficace à courte portée." },
-        { nom: "Colt", desc: "Tireur rapide, précision obligatoire." },
-        { nom: "Nita", desc: "Invoque un ours pour l’aider au combat." }
-      ],
-      chromatique: [
-        { nom: "Surge", desc: "S'améliore à chaque super utilisé." },
-        { nom: "Belle", desc: "Attaques qui rebondissent et ralentissent." },
-        { nom: "Ash", desc: "Tank puissant qui gagne en rage." }
-      ]
-      // Ajoute d'autres catégories ici
-    };
+<main>
+  <div class="categorie starter"><a href="brawlers.html?cat=starter"><img src="https://your-icon-url.com/shelly-icon.png" alt="Starter Icon">Starter</a></div>
+  <div class="categorie rare"><a href="brawlers.html?cat=rare"><img src="https://your-icon-url.com/colt-icon.png" alt="Rare Icon">Rare</a></div>
+  <div class="categorie super-rare"><a href="brawlers.html?cat=super-rare"><img src="https://your-icon-url.com/surge-icon.png" alt="Super Rare Icon">Super Rare</a></div>
+  <div class="categorie epique"><a href="brawlers.html?cat=epique"><img src="https://your-icon-url.com/nita-icon.png" alt="Epique Icon">Épique</a></div>
+  <div class="categorie mythique"><a href="brawlers.html?cat=mythique"><img src="https://your-icon-url.com/mortis-icon.png" alt="Mythique Icon">Mythique</a></div>
+  <div class="categorie legerendaire"><a href="brawlers.html?cat=legerendaire"><img src="https://your-icon-url.com/leo-icon.png" alt="Légendaire Icon">Légendaire</a></div>
+</main>
 
-    if (cat && data[cat]) {
-      titre.textContent = `Brawlers - ${cat.charAt(0).toUpperCase() + cat.slice(1)}`;
-      data[cat].forEach(perso => {
-        const bloc = document.createElement("div");
-        bloc.classList.add("perso");
-        bloc.innerHTML = `<h2>${perso.nom}</h2><p>${perso.desc}</p>`;
-        persoContainer.appendChild(bloc);
-      });
-    } else {
-      titre.textContent = "Catégorie inconnue";
-      persoContainer.innerHTML = "<p>Aucune brawler trouvée pour cette catégorie.</p>";
-    }
-  </script>
+<footer>
+  © 2025 Actu Brawl – Créé par iamwhale45 – Site Non-Officiel
+</footer>
 
 </body>
 </html>
