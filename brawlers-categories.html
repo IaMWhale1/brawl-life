@@ -29,49 +29,12 @@
       text-decoration: none;
       font-weight: bold;
     }
-    main {
-      padding: 30px;
+    h2 {
       text-align: center;
-    }
-    .categorie {
-      background-color: #2c2c44;
-      padding: 20px;
-      margin: 20px auto;
-      border-radius: 10px;
-      max-width: 300px;
-      font-size: 20px;
-      transition: transform 0.3s, background-color 0.3s ease;
-    }
-    .categorie a {
+      margin-top: 40px;
       color: white;
-      text-decoration: none;
-      font-weight: bold;
     }
 
-    .categorie:hover {
-      transform: scale(1.05);
-      background-color: #ffcc00;
-      cursor: pointer;
-    }
-
-    .starter {
-      background-color: #94d7f4; 
-    }
-    .rare {
-      background-color: #34fd16; 
-    }
-    .super-rare {
-      background-color: #238afb; 
-    }
-    .epique {
-      background-color: #c855d7; 
-    }
-    .mythique {
-      background-color: #ff3231; 
-    }
-    .legerendaire {
-      background-color: #eec200; 
-    }
     footer {
       text-align: center;
       padding: 20px;
@@ -80,13 +43,68 @@
       font-size: 0.9em;
     }
 
-    
-    .categorie img {
-      width: 30px;
-      margin-right: 10px;
-      vertical-align: middle;
+    .carrousel {
+      margin: 40px auto;
+      max-width: 95%;
+    }
+
+    .carrousel-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .carrousel-content {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 10px;
+      padding: 10px;
+      background: #2c2c44;
+      border-radius: 10px;
+      max-width: 90%;
+    }
+
+    .carrousel-content::-webkit-scrollbar {
+      display: none;
+    }
+
+    .brawler {
+      background: #444;
+      padding: 10px;
+      border-radius: 10px;
+      width: 120px;
+      min-width: 120px;
+      text-align: center;
+      font-weight: bold;
+      color: white;
+      flex-shrink: 0;
+      border: 2px solid var(--couleur, white);
+    }
+
+    .prev, .next {
+      background: #ffcc00;
+      border: none;
+      font-size: 1.5rem;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .prev:hover, .next:hover {
+      background: #ffaa00;
     }
   </style>
+  <script>
+    function scrollCarousel(button) {
+      const wrapper = button.closest(".carrousel-wrapper");
+      const content = wrapper.querySelector(".carrousel-content");
+      const direction = button.classList.contains("prev") ? -1 : 1;
+      content.scrollBy({ left: direction * 200, behavior: "smooth" });
+    }
+  </script>
 </head>
 <body>
 
@@ -104,12 +122,155 @@
 </nav>
 
 <main>
-  <div class="categorie starter"><a href="brawlers.html?cat=starter"><img src="https://your-icon-url.com/shelly-icon.png" alt="Starter Icon">Starter</a></div>
-  <div class="categorie rare"><a href="brawlers.html?cat=rare"><img src="https://your-icon-url.com/colt-icon.png" alt="Rare Icon">Rare</a></div>
-  <div class="categorie super-rare"><a href="brawlers.html?cat=super-rare"><img src="https://your-icon-url.com/surge-icon.png" alt="Super Rare Icon">Super Rare</a></div>
-  <div class="categorie epique"><a href="brawlers.html?cat=epique"><img src="https://your-icon-url.com/nita-icon.png" alt="Epique Icon">Épique</a></div>
-  <div class="categorie mythique"><a href="brawlers.html?cat=mythique"><img src="https://your-icon-url.com/mortis-icon.png" alt="Mythique Icon">Mythique</a></div>
-  <div class="categorie legerendaire"><a href="brawlers.html?cat=legerendaire"><img src="https://your-icon-url.com/leo-icon.png" alt="Légendaire Icon">Légendaire</a></div>
+<section class="carrousel" style="--couleur: #94d7f4;">
+  <h2>Starter</h2>
+  <div class="carrousel-wrapper">
+    <button class="prev" onclick="scrollCarousel(this)">‹</button>
+    <div class="carrousel-content">
+      <div class="brawler">Shelly</div>
+    </div>
+    <button class="next" onclick="scrollCarousel(this)">›</button>
+  </div>
+</section>
+
+<section class="carrousel" style="--couleur: #34fd16;">
+  <h2>Rare</h2>
+  <div class="carrousel-wrapper">
+    <button class="prev" onclick="scrollCarousel(this)">‹</button>
+    <div class="carrousel-content">
+      <div class="brawler">Nita</div>
+      <div class="brawler">El Primo</div>
+      <div class="brawler">Brock</div>
+      <div class="brawler">Colt</div>
+      <div class="brawler">Bull</div>
+      <div class="brawler">Poco</div>
+      <div class="brawler">Rosa</div>
+      <div class="brawler">Bartaba</div>
+    </div>
+    <button class="next" onclick="scrollCarousel(this)">›</button>
+  </div>
+</section>
+
+<section class="carrousel" style="--couleur: #238afb;">
+  <h2>Super Rare</h2>
+  <div class="carrousel-wrapper">
+    <button class="prev" onclick="scrollCarousel(this)">‹</button>
+    <div class="carrousel-content">
+      <div class="brawler">Arcade</div>
+      <div class="brawler">Ricochet</div>
+      <div class="brawler">Gus</div>
+      <div class="brawler">Darryl</div>
+      <div class="brawler">Tick</div>
+      <div class="brawler">Dinamike</div>
+      <div class="brawler">Jessie</div>
+      <div class="brawler">Penny</div>
+      <div class="brawler">Carl</div>
+      <div class="brawler">Jackie</div>
+    </div>
+    <button class="next" onclick="scrollCarousel(this)">›</button>
+  </div>
+</section>
+
+<section class="carrousel" style="--couleur: #c855d7;">
+  <h2>Épique</h2>
+  <div class="carrousel-wrapper">
+    <button class="prev" onclick="scrollCarousel(this)">‹</button>
+    <div class="carrousel-content">
+      <div class="brawler">Edgar</div>
+      <div class="brawler">Mandy</div>
+      <div class="brawler">Colette</div>
+      <div class="brawler">Meeple</div>
+      <div class="brawler">Bibi</div>
+      <div class="brawler">Larry and Lawrie</div>
+      <div class="brawler">Stu</div>
+      <div class="brawler">Piper</div>
+      <div class="brawler">Angelo</div>
+      <div class="brawler">Ash</div>
+      <div class="brawler">Béa</div>
+      <div class="brawler">Belle</div>
+      <div class="brawler">Berry</div>
+      <div class="brawler">Bo</div>
+      <div class="brawler">Bonnie</div>
+      <div class="brawler">Eliza</div>
+      <div class="brawler">Frank</div>
+      <div class="brawler">Gael</div>
+      <div class="brawler">Griff</div>
+      <div class="brawler">Grom</div>
+      <div class="brawler">Hank</div>
+      <div class="brawler">Lola</div>
+      <div class="brawler">Maisie</div>
+      <div class="brawler">Nani</div>
+      <div class="brawler">Pam</div>
+      <div class="brawler">Pearl</div>
+      <div class="brawler">Sam</div>
+      <div class="brawler">Shade</div>
+    </div>
+    <button class="next" onclick="scrollCarousel(this)">›</button>
+  </div>
+</section>
+
+<section class="carrousel" style="--couleur: #ff3231;">
+  <h2>Mythique</h2>
+  <div class="carrousel-wrapper">
+    <button class="prev" onclick="scrollCarousel(this)">‹</button>
+    <div class="carrousel-content">
+      <div class="brawler">Buster</div>
+      <div class="brawler">Buzz</div>
+      <div class="brawler">Byron</div>
+      <div class="brawler">Charlie</div>
+      <div class="brawler">Chuck</div>
+      <div class="brawler">Clancy</div>
+      <div class="brawler">Doug</div>
+      <div class="brawler">Eve</div>
+      <div class="brawler">Fang</div>
+      <div class="brawler">Finx</div>
+      <div class="brawler">Lumi</div>
+      <div class="brawler">Gene</div>
+      <div class="brawler">Gray</div>
+      <div class="brawler">Janet</div>
+      <div class="brawler">Lou</div>
+      <div class="brawler">Lily</div>
+      <div class="brawler">Juju</div>
+      <div class="brawler">Max</div>
+      <div class="brawler">Melodie</div>
+      <div class="brawler">Mico</div>
+      <div class="brawler">Moe</div>
+      <div class="brawler">Mortis</div>
+      <div class="brawler">Mr. P</div>
+      <div class="brawler">Ollie</div>
+      <div class="brawler">Otis</div>
+      <div class="brawler">R-T</div>
+      <div class="brawler">Ruffs</div>
+      <div class="brawler">Sprout</div>
+      <div class="brawler">Squeak</div>
+      <div class="brawler">Tara</div>
+      <div class="brawler">Willow</div>
+    </div>
+    <button class="next" onclick="scrollCarousel(this)">›</button>
+  </div>
+</section>
+
+<section class="carrousel" style="--couleur: #eec200;">
+  <h2>Légendaire</h2>
+  <div class="carrousel-wrapper">
+    <button class="prev" onclick="scrollCarousel(this)">‹</button>
+    <div class="carrousel-content">
+      <div class="brawler">Ambre</div>
+      <div class="brawler">Chester</div>
+      <div class="brawler">Cordelius</div>
+      <div class="brawler">Crow</div>
+      <div class="brawler">Draco</div>
+      <div class="brawler">Kenji</div>
+      <div class="brawler">Kit</div>
+      <div class="brawler">Leon</div>
+      <div class="brawler">Meg</div>
+      <div class="brawler">Sandy</div>
+      <div class="brawler">Spike</div>
+      <div class="brawler">Surge</div>
+    </div>
+    <button class="next" onclick="scrollCarousel(this)">›</button>
+  </div>
+</section>
 </main>
 
 <footer>
