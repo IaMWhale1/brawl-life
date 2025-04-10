@@ -1,43 +1,155 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Shelly – Actu Brawl</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
       background-color: #1e1e2f;
       color: white;
-      font-family: Arial, sans-serif;
-      padding: 20px;
+      margin: 0;
+      padding: 0;
     }
-    .brawler-container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: #2c2c44;
-      border-radius: 10px;
+
+    header {
+      background-color: #ffcc00;
+      color: #1e1e2f;
       padding: 20px;
       text-align: center;
     }
-    .brawler-container img {
-      width: 150px;
-      margin-bottom: 20px;
+
+    nav {
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
     }
-    h1 {
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .brawler-container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #2c2c44;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 0 10px #000;
+      text-align: center;
+    }
+
+    .brawler-container img.main {
+      width: 180px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+
+    .brawler-container h1 {
       color: #ffcc00;
+      margin-bottom: 10px;
+    }
+
+    .abilities {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .ability {
+      background-color: #1e1e35;
+      border-radius: 10px;
+      padding: 20px;
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0 0 5px #000;
+    }
+
+    .ability img {
+      width: 64px;
+      margin-bottom: 10px;
+    }
+
+    .ability p {
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 15px;
+      color: #888;
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
 
+  <header>
+    <h1>Shelly – Starter</h1>
+  </header>
+
+  <nav>
+    <a href="../index.html">Accueil</a>
+    <a href="../brawlers-categories.html">Brawlers</a>
+    <a href="../maps.html">Maps</a>
+    <a href="../actualites.html">Actualité</a>
+    <a href="../lore.html">Lore</a>
+    <a href="../contact.html">Contact</a>
+  </nav>
+
   <div class="brawler-container">
-    <img src="https://static.wikia.nocookie.net/brawlstars/images/3/3b/Shelly_Skin-Default.png" alt="Shelly" width="100" >
+    <img class="main" src="https://static.wikia.nocookie.net/brawlstars/images/c/cb/Colt_Skin-Default.png" alt="Colt">
 
     <h1>Shelly</h1>
     <p><strong>Rareté :</strong> Starter</p>
-    <p><strong>Description :</strong> Shelly est la Brawler de départ. Elle possède un fusil à pompe qui inflige des dégâts à portée moyenne.</p>
-    <p><strong>Super (super shell):</strong> Tire une puissante salve qui détruit les obstacles.</p>
-    <!-- Tu peux ajouter les gadgets, star power, stats, etc ici -->
+    <p><strong>Description :</strong> Shelly est une ranger idéale: puissante, indépendante et une as au tir. Pourtant, tout le monde préfère Colt. C'est vraiment trop injuste!</p>
+
+    <div class="abilities">
+
+      <div class="ability">
+        <img src="https://static.wikia.nocookie.net/brawlstars/images/8/84/Colt_Attack.png" alt="Attaque">
+        <p><strong>Attaque – Chevrotine :</strong> Un coup de feu projette une volée de plombs à distance moyenne. Plus il y a de plomb qui atteignent la cible, plus les dégâts sont élevés.</p>
+      </div>
+
+      <div class="ability">
+        <img src="https://static.wikia.nocookie.net/brawlstars/images/0/00/Colt_Super.png" alt="Super">
+        <p><strong>Super – Super Chevrotine :</strong> Le super chevrotine de Shelly rase tout sur son passage, abris et ennemis compris! Les survivants sont projetés en arrière.</p>
+      </div>
+
+      <div class="ability">
+        <img src="https://static.wikia.nocookie.net/brawlstars/images/d/d6/Colt_Gadget_Speedloader.png" alt="Gadget 1">
+        <p><strong>Gadget – Avance rapide :</strong> Shelly sprinte vers l'avant, en omettant un pas (ou dix!). Délai: 13 secondes</p>
+      </div>
+
+      <div class="ability">
+        <img src="https://static.wikia.nocookie.net/brawlstars/images/5/5c/Colt_Gadget_Silver_Bullet.png" alt="Gadget 2">
+        <p><strong>Gadget – Pigeons d'argile :</strong> À l'activation et pendants 5 secondes, les attaques principales de Shelly concentrent la puissance de tir sur une plus petite zone et on une meilleure portée. Délai: 16 secondes</p>
+      </div>
+
+      <div class="ability">
+        <img src="https://static.wikia.nocookie.net/brawlstars/images/6/60/Colt_Star_Power_Slick_Boots.png" alt="Star Power 1">
+        <p><strong>Star Power – Étourdi :</strong> La chevrotine de Shelly ralentit les ennemis pendant 2 secondes.</p>
+      </div>
+
+      <div class="ability">
+        <img src="https://static.wikia.nocookie.net/brawlstars/images/8/81/Colt_Star_Power_Magnum_Special.png" alt="Star Power 2">
+        <p><strong>Star Power – Magnum spécial :</strong> La portée et la vitesse de ses balles augmentent de 11%.</p>
+      </div>
+
+    </div>
   </div>
+
+  <footer>
+    © 2025 Actu Brawl – Créé par iamwhale45 | Site non officiel
+  </footer>
 
 </body>
 </html>
